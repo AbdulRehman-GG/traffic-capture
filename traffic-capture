@@ -1,0 +1,11 @@
+import subprocess
+
+# Set the network interface to capture traffic on (e.g. eth0)
+interface = "eth0"
+
+# Set the filename to save the capture to
+filename = "capture.pcap"
+
+# Capture packets using TShark
+tshark_cmd = f"tshark -i {interface} -w {filename}"
+subprocess.run(tshark_cmd, shell=True)
